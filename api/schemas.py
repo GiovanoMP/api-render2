@@ -26,28 +26,8 @@ class TransactionBase(BaseModel):
     class Config:
         from_attributes = True
 
-class TransactionResponse(BaseModel):
-    id: int
-    created_at: datetime
-    NumeroFatura: str
-    CodigoProduto: str
-    Descricao: str
-    Quantidade: int
-    DataFatura: datetime
-    PrecoUnitario: Decimal
-    IDCliente: str
-    Pais: str
-    CategoriaProduto: str
-    CategoriaPreco: str
-    ValorTotalFatura: Decimal
-    FaturaUnica: bool
-    Ano: int
-    Mes: int
-    Dia: int
-    DiaSemana: int
-
-    class Config:
-        from_attributes = True
+class TransactionResponse(TransactionBase):
+    pass
 
 class SummaryResponse(BaseModel):
     total_transactions: int
